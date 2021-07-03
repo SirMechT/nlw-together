@@ -24,6 +24,7 @@ html{
     --grey-dark: #4D5E77;
     --grey-blue: #A1B2CD;
     --grey-light: #E5EAF1;
+    --grey-medium: #EAECF1;
 
     /* 10px ----- dica: para facilitar a responsividade na medida "rem" é recomendado setar a "font-size" de todo o html em 10px ou 62.5% pois facilita a conversão de px para rem (28px = 2.8rem) */
     font-size: 62.5% 
@@ -94,7 +95,7 @@ button:hover, .button:hover{
     filter: brightness(1.2);
 }
 
-button > img
+button > img,
 .button > img{
     margin-right: 1rem;
     width: 2rem;
