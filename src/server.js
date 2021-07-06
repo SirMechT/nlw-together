@@ -14,6 +14,9 @@ server.use(express.static("public"))
 // mudando o diretório padrão dos arquivos EJS para "__dirname" (variável global) que é igual á "C:\GitHub\nlw-together\src\views"
 server.set('views', path.join(__dirname, 'views'))
 
+// (express: middleware) pegar o conteúdo do formulário e permitir que o controller possa manipulá-lo
+server.use(express.urlencoded({extended: true}))
+
 // após a importação de route, é necessário usar esse comando para usar
 server.use(route)
 

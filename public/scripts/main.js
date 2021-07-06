@@ -57,8 +57,23 @@ deleteButtons.forEach(button => {
 })
 
 function handleClick(event, check = true){
+    // remover a alteração de URL
+    event.preventDefault()
+
     // sempre que um ou mais elemento repetir procure gardar em VARIÁVEIS para REUTILIZAR isso ajuda no desempenho da aplicação
     const text = check ? "Marcar como lida" : "Excluir"
+    const slug = check ? "check" : "delete"
+
+    // selecionando o room-id 
+    const roomId = document.querySelector("#room-id").dataset.id
+
+    // selecionando cada questão pelo seu ID usando o event por que o evento "click" retorna as informações necessárias
+    const questionID = event.target.dataset.id
+
+    // selecionando a form da modal
+    const form = document.querySelector(".modal form")
+    // mudando o atributo(link) da modal
+    form.setAttribute("action", `/room/${roomId}/${questionID}/${slug}`)
 
     modalTitle.innerHTML= `${text} esta pergunta`
     modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`
