@@ -14,13 +14,13 @@
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <div id="home" class="content">
             <header>
-                <img src="assets/logo.svg" alt="Rocket.Q Logo"/> 
+                <img src="images/logo.svg" alt="Rocket.Q Logo"/> 
             </header>
 
             <div id="bg">
@@ -31,35 +31,20 @@
             <main>
                 <div class="container">
                     <section>
-                        <h2>Entre como participante</h2>
+                        <h2>Crie sua prórpia sala</h2>
                         <form action="">
                             <!--
                             O for="room-id" é usado para linkar o Label com o input, permitindo ao clicar no texto do input redirecione o usuário á entrar com o dado requisitado;
                             A class="sr-only" é utilizado para manter o label escondido do usuário, porém visivel para os motores de busca e ferramentas de acessibilidade;
                             -->
-                            <label class="sr-only" for="room-id">Código da sala</label> 
-                            <input type="number" id="room-id" placeholder="Código da sala">
+                            <label class="sr-only" for="room-pass">Insira uma senha</label> 
+                            <input type="password" id="room-pass" placeholder="Insira uma senha">
                             <button>
-                                <img src="assets/enter-room.svg" alt="Entrar na Sala">
-                                Entrar na sala
+                                <img src="images/users-white.svg" alt="Entrar na Sala">
+                                Criar sala
                             </button>
                         </form>
                     </section>
-    
-                    <div class="separator">
-                        <div></div>
-                        <div>ou</div>
-                        <div></div>
-                    </div>
-    
-                    <section>
-                        <h2>Crie sua própria sala de forma fácil</h2>
-                        <a href="create-room.html" class="button outlined">
-                            <img src="assets/users.svg" alt="Criar Sala">
-                            Criar Sala
-                        </a>
-                    </section>
-    
                 </div>
             </main>
         </div>
