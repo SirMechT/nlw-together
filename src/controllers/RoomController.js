@@ -6,22 +6,24 @@ module.exports = {
         // inicialização do DB no controllers
         const db = await Database()
         // inclusão do password vindo do create-pass.ejs
-        var pass = req.body.password
+        const pass = req.body.password
         let roomId
 
+        // Gerar o random.number da sala de 6 dígitos
         for(var i =0; i < 6; i++){
             i == 0 ? roomId = Math.floor(Math.random() * 10).toString() :
             roomId += Math.floor(Math.random() * 10).toString()
         }
-
-        console.log(pass)
+        
+        // Verificação de número de sala duplicado
+        const roomsIds = await db.run(`SELECT id from rooms`)
 
         // inserção de dados na tabela 
         await db.run(`INSERT INTO rooms (
             id,
             pass
         ) VALUES (
-            ${parseInt(roomId)}, 
+            ${parseInt(roomId)},
             ${pass}
         )`)
         
