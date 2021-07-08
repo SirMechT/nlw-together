@@ -14,8 +14,9 @@ const initDb = {
 
         await db.exec(`CREATE TABLE questions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            titulo TEXT,
-            read INT
+            title TEXT,
+            read INT,
+            room INT
         )`);
             
         // Ao abrir a conexão com o banco de dados e necessário fechar no final
