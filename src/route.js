@@ -15,6 +15,7 @@ route.get('/create-pass', (req, res) => res.render("index", {page: 'create-pass'
 // Formato que o formulário de dentro da modal tem que passar a informação
 route.get('/room/:room', RoomController.open)
 route.post('/create-room', RoomController.create)
+route.post('/enter-room', RoomController.enter)
 
 // o ":" na rota do express indica a recepção de um valor desconhecido ou seja uma VARIÁVEL
 route.post('/question/:room/:question/:action', QuestionController.index)
