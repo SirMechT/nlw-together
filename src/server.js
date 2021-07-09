@@ -20,7 +20,8 @@ server.use(express.urlencoded({extended: true}))
 // após a importação de route, é necessário usar esse comando para usar
 server.use(route)
 
+const port = process.env.PORT || 3000
 // Arrow function "() =>" é uma forma simplificada de declarar uma função em JS muito utilizado pelos devs atuais
-server.listen(3000, () => console.log("RODANDO"))
+server.listen(port,'0.0.0.0', () => console.log(`Rodando na porta ${port}`))
 
 
