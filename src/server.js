@@ -21,6 +21,33 @@ server.use(express.urlencoded({extended: true}))
 server.use(route)
 
 const port = process.env.PORT || 3000
+
+const {json_alias} = require('json-alias')
+const { alias_result } = json_alias({
+  alias: {
+    contacts: "my_first_object.contacts"
+  },
+  in: {
+    object: {
+      my_first_object: {
+        contacts: [
+          {
+            name: "Robson Gomes",
+            web_site: "https://robsongomes.com.br",
+            cellphone: "+5527981470133",
+            social: {
+              linkedin: "https://www.linkedin.com/in/robson-gomesj/"
+            }
+          }
+        ]
+      }
+    }
+  },
+  save_origin : true
+})
+console.log(alias_result)
+
+
 // Arrow function "() =>" é uma forma simplificada de declarar uma função em JS muito utilizado pelos devs atuais
 server.listen(port,'0.0.0.0', () => console.log(`Rodando na porta ${port}`))
 
